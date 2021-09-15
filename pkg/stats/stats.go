@@ -30,3 +30,4 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 
 	return sumByCategory
 }
+ 
