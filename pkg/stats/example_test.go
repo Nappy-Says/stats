@@ -5,7 +5,7 @@ import (
 	"github.com/nappy-says/bank/v2/pkg/types"
 )
 
-func ExampleAvg() {
+func ExampleAvg_positive() {
 	payments := []types.Payment{
 		{
 			ID:       	1,
