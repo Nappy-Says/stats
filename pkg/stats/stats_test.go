@@ -46,10 +46,10 @@ func TestCategoriesAvg(t *testing.T) {
 	}
 
 	except := map[types.Category]types.Money{
-		"Food": 		100 ,
-		"Attraction": 	500 ,
+		"Food": 		25,
+		"Attraction": 	500,
 		"XFit": 		4000,
-		"Internet": 	200 ,
+		"Internet": 	200,
 	}
 
 	result := CategoriesAvg(payments)
