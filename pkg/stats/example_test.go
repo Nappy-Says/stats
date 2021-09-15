@@ -36,7 +36,7 @@ func ExampleAvg_positive() {
 	fmt.Println(Avg(payments))
 
 	// Output:
-	// 12
+	// 25
 }
 
 
