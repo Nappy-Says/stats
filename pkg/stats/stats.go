@@ -6,14 +6,16 @@ import "github.com/nappy-says/bank/v2/pkg/types"
 
 func Avg(payments []types.Payment) types.Money {
 	avg_sum := types.Money(0)
-	
+	passCount := 0
+
 	for _, i := range payments {
 		if i.Status != "FAIL" {
+			passCount +=1
 			avg_sum += i.Amount
 		}
 	}
 
-	result := types.Money(int(avg_sum) / len(payments))
+	result := types.Money(int(avg_sum) / passCount)
 
 	return result 
 }
