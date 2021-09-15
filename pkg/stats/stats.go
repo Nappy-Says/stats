@@ -1,8 +1,6 @@
 package stats
 
-import (
-	"github.com/nappy-says/bank/pkg/bank/types"
-)
+import "github.com/nappy-says/bank/v2/pkg/types"
 
 
 
@@ -10,7 +8,9 @@ func Avg(payments []types.Payment) types.Money {
 	avg_sum := types.Money(0)
 	
 	for _, i := range payments {
-		avg_sum += i.Amount
+		if i.Status != types.StatusFail {
+			avg_sum += i.Amount
+		}
 	}
 
 	result := types.Money(int(avg_sum) / len(payments))
@@ -23,7 +23,7 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 	sumByCategory := types.Money(0)
 	
 	for _, i := range payments {
-		if i.Category == category {
+		if i.Category == category && i.Status != types.StatusFail {
 			sumByCategory += i.Amount
 		}
 	}
